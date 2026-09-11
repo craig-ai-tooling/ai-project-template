@@ -77,7 +77,10 @@ for (( i=1; i<=MAX_ITERATIONS; i++ )); do
     echo "  (swept uncommitted changes into a commit)"
   fi
 
-  if grep -q "$DONE_SIGNAL" "$PROGRESS_FILE" 2>/dev/null; then
+  # A whole line, not a substring: PROGRESS.md's own header names the signal
+  # while explaining it, so a substring match "finished" every plan after
+  # iteration 1 with all its tasks still open.
+  if grep -qxF "$DONE_SIGNAL" "$PROGRESS_FILE" 2>/dev/null; then
     echo
     echo "Found ${DONE_SIGNAL} in ${PROGRESS_FILE}. Plan complete after ${i} iteration(s)."
     exit 0
