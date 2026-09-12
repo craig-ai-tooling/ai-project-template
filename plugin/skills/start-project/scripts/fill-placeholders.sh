@@ -66,7 +66,7 @@ sub .specify/memory/constitution.md '`<FILL IN: YYYY-MM-DD>`' "$TODAY"
 
 # --- CODEOWNERS / dependabot ------------------------------------------------
 sub .github/CODEOWNERS '@nctiggy' "@${OWNER}"
-sub .github/ISSUE_TEMPLATE/config.yml 'nctiggy/ai-project-template' "${OWNER}/${PROJECT_NAME}"
+sub .github/ISSUE_TEMPLATE/config.yml 'craig-ai-tooling/ai-project-template' "${OWNER}/${PROJECT_NAME}"
 
 # --- CI ---------------------------------------------------------------------
 sub .github/workflows/ci.yml "'echo \"<FILL IN: npm ci>\"'" "${CMD_INSTALL:-echo 'no install step'}"

@@ -19,7 +19,7 @@ down that the very next thing the user can do is write a spec and run a Ralph lo
 - gh auth: !`gh auth status 2>&1 | head -3`
 - Working dir: !`pwd`
 - Existing dirs here: !`ls -d */ 2>/dev/null | head -10`
-- Self-hosted runners: !`gh api repos/nctiggy/ai-project-template/actions/runners --jq '.runners[]?|"\(.name) \(.status)"' 2>/dev/null || echo "none visible"`
+- Self-hosted runners: !`gh api repos/craig-ai-tooling/ai-project-template/actions/runners --jq '.runners[]?|"\(.name) \(.status)"' 2>/dev/null || echo "none visible"`
 
 If gh is not authenticated, stop and tell the user to run `gh auth login`. Nothing
 downstream works without it.
@@ -52,7 +52,7 @@ The UI and auth answers decide which docs survive Phase 4. That is why they matt
 
 ```bash
 gh repo create <name> --<public|private> \
-  --template nctiggy/ai-project-template --clone
+  --template craig-ai-tooling/ai-project-template --clone
 cd <name>
 ```
 
