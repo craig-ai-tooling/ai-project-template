@@ -73,7 +73,7 @@ free GitHub security features, optionally wires a design system, and hands back 
 repo that is ready for specs and Ralph loops.
 
 ```bash
-claude --plugin-url https://github.com/nctiggy/ai-project-template/releases/latest/download/start-project.zip
+claude --plugin-url https://github.com/craig-ai-tooling/ai-project-template/releases/latest/download/start-project.zip
 ```
 
 then in the session:
@@ -92,7 +92,7 @@ Source lives in [`plugin/`](plugin/); it is removed from generated projects.
 ### The manual way
 
 ```bash
-gh repo create my-project --public --template nctiggy/ai-project-template --clone
+gh repo create my-project --public --template craig-ai-tooling/ai-project-template --clone
 cd my-project
 rm -rf plugin/                          # template tooling, not project content
 
