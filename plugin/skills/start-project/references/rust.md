@@ -15,10 +15,8 @@
 ## CI setup block
 
 ```yaml
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          components: clippy, rustfmt
-      - uses: Swatinem/rust-cache@v2
+      - run: rustup toolchain install stable --profile minimal --component clippy,rustfmt && rustup default stable
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
 ```
 
 ## Dependabot ecosystem
@@ -37,3 +35,6 @@ CodeQL has no Rust analyzer. Rely on `clippy -D warnings` in CI and leave
 
 ## Notes
 - The `format-and-lint` hook runs `rustfmt` on changed `.rs` files.
+- The toolchain comes from `rustup`, which GitHub-hosted runners ship, not from a
+  third-party action: `dtolnay/rust-toolchain` publishes branches rather than
+  version tags, so it cannot be pinned with a verifiable version comment.

@@ -37,6 +37,7 @@ matters (IDOR is the most common real-world break).
 
 ### 4. Dependencies
 - Dependabot is enabled. Security updates get merged promptly, not eventually.
+- Every GitHub Action is pinned to a full 40-character commit SHA with a `# vX.Y.Z` comment naming the tag it came from. A tag or branch can be re-pointed by whoever controls the action; a SHA cannot. CI enforces this (`bash .github/scripts/check-action-pins.sh` in the guardrails job), and Dependabot bumps the SHA and the comment together.
 - New dependency requires justification: what does it do that stdlib cannot?
 
 ## Headers & transport
