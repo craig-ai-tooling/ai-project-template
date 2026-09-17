@@ -15,7 +15,7 @@
 ## CI setup block
 
 ```yaml
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5.6.0
         with:
           go-version: '1.23'
           cache: true
