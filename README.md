@@ -122,6 +122,11 @@ autonomous loop amplifies whatever it already does, including mistakes.
 The loop stops on the iteration cap, on any failure, or when `RALPH_COMPLETE`
 appears in `ralph/PROGRESS.md`.
 
+The loop reads the root notebook (`ralph/*.md`) unless a task is named. With
+`RALPH_PLAN=<id>`, or on a branch named `plan/<id>`, it works `ralph/plans/<id>/`
+instead. That is the shape AI Lawnmower's dispatcher writes, and its runner
+sets `RALPH_PLAN` on every pod.
+
 ---
 
 ## Trigger the issue automation
